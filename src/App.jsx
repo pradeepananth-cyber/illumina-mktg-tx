@@ -313,11 +313,142 @@ export default function IlluminaTransformation() {
           z-index: 10;
         }
 
+        /* Strategic Goals Banner */
+        .strategic-goals {
+          background: linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(99,102,241,0.08) 100%);
+          border: 1px solid rgba(0,212,170,0.2);
+          border-radius: 20px;
+          padding: 40px;
+          margin-bottom: 48px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .strategic-goals::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: var(--gradient-1);
+        }
+
+        .strategic-goals-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 24px;
+        }
+
+        .strategic-goals-header h3 {
+          font-family: 'Space Mono', monospace;
+          font-size: 12px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: var(--primary);
+        }
+
+        .strategic-goals-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .goal-card {
+          display: flex;
+          gap: 16px;
+          align-items: flex-start;
+        }
+
+        .goal-icon {
+          width: 48px;
+          height: 48px;
+          min-width: 48px;
+          background: rgba(0,212,170,0.15);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+        }
+
+        .goal-content h4 {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 4px;
+          color: var(--light);
+        }
+
+        .goal-content p {
+          font-size: 14px;
+          color: var(--muted);
+          line-height: 1.5;
+        }
+
+        .goal-metric {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(0,212,170,0.2);
+          padding: 4px 10px;
+          border-radius: 100px;
+          font-family: 'Space Mono', monospace;
+          font-size: 12px;
+          color: var(--primary);
+          margin-top: 8px;
+        }
+
+        .strategic-pillars {
+          margin-top: 32px;
+          padding-top: 24px;
+          border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .pillars-label {
+          font-size: 12px;
+          color: var(--muted);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 16px;
+        }
+
+        .pillars-grid {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+
+        .pillar-tag {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 16px;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 8px;
+          font-size: 14px;
+          color: var(--light);
+          transition: all 0.3s ease;
+        }
+
+        .pillar-tag:hover {
+          border-color: var(--primary);
+          background: rgba(0,212,170,0.1);
+        }
+
+        .pillar-tag svg {
+          color: var(--primary);
+        }
+
         /* Hero Section */
         .hero {
           background: var(--darker);
           position: relative;
           overflow: hidden;
+          min-height: auto;
+          padding-top: 100px;
+          padding-bottom: 100px;
         }
 
         .hero::before {
@@ -996,7 +1127,7 @@ export default function IlluminaTransformation() {
       <section id="hero" className="hero">
         <div className="section-content">
           <div className="hero-badge">
-            <span>Marketing Transformation</span>
+            <span>Marketing Transformation Initiative</span>
           </div>
           <h1>
             From Fragmented<br />
@@ -1004,17 +1135,107 @@ export default function IlluminaTransformation() {
           </h1>
           <p className="hero-subtitle">
             A strategic initiative to transform Illumina's marketing ecosystem, 
-            accelerating growth and expanding margins through intelligent automation 
-            and unified data architecture.
+            enabling sustainable growth, margin expansion, and market leadership 
+            through intelligent automation and unified data architecture.
           </p>
+
+          {/* Strategic Goals Section */}
+          <div className="strategic-goals">
+            <div className="strategic-goals-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+              <h3>Illumina Strategic Imperatives</h3>
+            </div>
+            <div className="strategic-goals-grid">
+              <div className="goal-card">
+                <div className="goal-icon">📈</div>
+                <div className="goal-content">
+                  <h4>Return to Sustainable Revenue Growth</h4>
+                  <p>Accelerate from flat performance to consistent growth trajectory</p>
+                  <div className="goal-metric">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                    </svg>
+                    Target: 5-9% Growth
+                  </div>
+                </div>
+              </div>
+              <div className="goal-card">
+                <div className="goal-icon">💰</div>
+                <div className="goal-content">
+                  <h4>Expand Operating Margins</h4>
+                  <p>Drive operational efficiency and scalable, margin-accretive growth</p>
+                  <div className="goal-metric">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                    </svg>
+                    Target: Mid-20s %
+                  </div>
+                </div>
+              </div>
+              <div className="goal-card">
+                <div className="goal-icon">🌏</div>
+                <div className="goal-content">
+                  <h4>Fill the China Revenue Gap</h4>
+                  <p>Compensate for market collapse through accelerated growth in other regions and segments</p>
+                </div>
+              </div>
+              <div className="goal-card">
+                <div className="goal-icon">🤝</div>
+                <div className="goal-content">
+                  <h4>Deepen Pharma Partnerships</h4>
+                  <p>Build life sciences intelligence platforms to strengthen strategic relationships</p>
+                </div>
+              </div>
+            </div>
+            <div className="strategic-pillars">
+              <div className="pillars-label">Growth Pillars</div>
+              <div className="pillars-grid">
+                <div className="pillar-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                  </svg>
+                  Accelerate Core Sequencing
+                </div>
+                <div className="pillar-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 12h8"/>
+                    <path d="M12 8v8"/>
+                  </svg>
+                  Scale Multiomics
+                </div>
+                <div className="pillar-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                  Expand Clinical Markets
+                </div>
+                <div className="pillar-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                  </svg>
+                  Life Sciences Intelligence
+                </div>
+              </div>
+            </div>
+          </div>
+
           <a href="#opportunity" className="hero-cta">
-            Explore the Vision
+            See How Marketing Transformation Enables These Goals
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
 
-          <div className="stats-grid">
+          <div className="stats-grid" style={{ marginTop: '48px' }}>
             <div className="stat-card">
               <div className="stat-value"><AnimatedCounter end={2} />x</div>
               <div className="stat-label">Campaign Launches Per Quarter</div>
@@ -1028,6 +1249,9 @@ export default function IlluminaTransformation() {
               <div className="stat-label">More Qualified Clinical Opportunities</div>
             </div>
           </div>
+          <p style={{ textAlign: 'center', color: 'var(--muted)', marginTop: '24px', fontSize: '14px' }}>
+            These marketing outcomes directly enable revenue growth, margin expansion, and clinical pipeline acceleration
+          </p>
         </div>
       </section>
 
@@ -1175,8 +1399,12 @@ export default function IlluminaTransformation() {
       <section id="impact" className="impact">
         <div className="section-content">
           <div className="section-header">
-            <div className="section-tag">Expected Impact</div>
-            <h2 className="section-title">Transformational<br />Business Outcomes</h2>
+            <div className="section-tag">Strategic Value</div>
+            <h2 className="section-title">Enabling Illumina's<br />Strategic Imperatives</h2>
+            <p style={{ color: 'var(--muted)', marginTop: '16px', maxWidth: '700px' }}>
+              This marketing transformation directly supports the path to 5-9% revenue growth, 
+              mid-20s operating margins, and accelerated market expansion.
+            </p>
           </div>
 
           <div className="impact-metrics">
@@ -1188,7 +1416,8 @@ export default function IlluminaTransformation() {
               <div className="impact-title">Speed to Market</div>
               <div className="impact-description">
                 Campaign launch timelines reduced from months to days, 
-                enabling 2x additional launches per quarter
+                enabling 2x additional launches per quarter and accelerating 
+                core sequencing and multiomics adoption
               </div>
             </div>
 
@@ -1199,8 +1428,9 @@ export default function IlluminaTransformation() {
               <div className="impact-value">~20%</div>
               <div className="impact-title">Shorter Sales Cycles</div>
               <div className="impact-description">
-                Decreased lead-to-close duration for priority product lines, 
-                driving incremental instrument pull-through
+                Decreased lead-to-close duration drives near-term revenue 
+                realization and instrument pull-through, directly supporting 
+                the 5-9% growth target
               </div>
             </div>
 
@@ -1211,8 +1441,9 @@ export default function IlluminaTransformation() {
               <div className="impact-value">~100%</div>
               <div className="impact-title">Clinical Pipeline Growth</div>
               <div className="impact-description">
-                Increased qualified clinical opportunities through 
-                unified, real-time data integration
+                Increased qualified clinical opportunities through unified 
+                data, expanding clinical markets and deepening pharma 
+                partnerships
               </div>
             </div>
           </div>
